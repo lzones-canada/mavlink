@@ -38,6 +38,11 @@
     messages: 50000 - 50099
     commands: 50000 - 50099
   -->
+  <include>lzc.xml</include>
+  <!-- lzc.xml range of IDs:
+    messages: 70000 - 70099
+    commands: 70000 - 70049
+  -->
   <include>cubepilot.xml</include>
   <messages/>
 </mavlink>

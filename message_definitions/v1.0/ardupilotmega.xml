@@ -64,7 +64,7 @@
         <description>Execute auxiliary function</description>
         <param index="1" label="AuxiliaryFunction">Auxiliary Function.</param>
         <param index="2" label="SwitchPosition" enum="MAV_CMD_DO_AUX_FUNCTION_SWITCH_LEVEL">Switch Level.</param>
-        <param index="3" label="BeaconLights">Beacon Lights.</param>
+        <param index="3">Empty.</param>
         <param index="4">Empty.</param>
         <param index="5">Empty.</param>
         <param index="6">Empty.</param>
@@ -1162,33 +1162,6 @@
       <entry value="2" name="OSD_PARAM_INVALID_PARAMETER_INDEX"/>
       <entry value="3" name="OSD_PARAM_INVALID_PARAMETER"/>
     </enum>
-    <enum name="PAYLOAD_STATUS_FLAGS" bitmask="true">
-      <description>These encode the payload status and sent as part of the PAYLOAD_STATUS message.</description>
-      <entry value="1" name="PAYLOAD_STATUS_FLAGS_RESERVED4">
-        <description>Reserved - Future use.</description>
-      </entry>
-      <entry value="2" name="PAYLOAD_STATUS_FLAGS_RESERVED3">
-        <description>Reserved - Future use.</description>
-      </entry>
-      <entry value="4" name="PAYLOAD_STATUS_FLAGS_WING_LIMIT">
-        <description>Wing Limit Input Status - on when set.</description>
-      </entry>
-      <entry value="8" name="PAYLOAD_STATUS_FLAGS_HSTM_POWER">
-        <description>HSTM Power status (Pin 105) - on when set.</description>
-      </entry>
-      <entry value="16" name="PAYLOAD_STATUS_FLAGS_BEACON_LIGHTS">
-        <description>Beacon lights status (Pin 102) - on when set.</description>
-      </entry>
-      <entry value="32" name="PAYLOAD_STATUS_FLAGS_POSITION_LIGHTS">
-        <description>Position lights status (Pin 101) - on when set.</description>
-      </entry>
-      <entry value="64" name="PAYLOAD_STATUS_FLAGS_BALLOON_RELEASE">
-        <description>Balloon release status (Pin 104) - on when set.</description>
-      </entry>
-      <entry value="128" name="PAYLOAD_STATUS_FLAGS_PARACHUTE_RELEASE">
-        <description>Parachute Deploy status (Pin 103) - on when set.</description>
-      </entry>
-    </enum>
   </enums>
   <messages>
     <message id="150" name="SENSOR_OFFSETS">
@@ -1660,21 +1633,6 @@
       <description>RPM sensor output.</description>
       <field type="float" name="rpm1">RPM Sensor1.</field>
       <field type="float" name="rpm2">RPM Sensor2.</field>
-    </message>
-    <!-- IMET Mavlink Message -->
-    <message id="227" name="IMET_SENSOR_RAW">
-      <description>Contains raw sensor data from IMET application.</description>
-      <field type="uint32_t" name="time_boot_ms">Timestamp (milliseconds since system boot)</field>  
-      <field type="uint8_t" name="data_length">Data length.</field>
-      <field type="uint8_t[64]" name="data">IMET sensor raw data message</field>
-    </message>
-    <!-- Payload Status Message -->
-    <message id="228" name="PAYLOAD_STATUS">
-      <description>Contains Payload status information.</description>
-      <field type="uint8_t" name="flags" enum="PAYLOAD_STATUS_FLAGS" display="bitmask">Payload status bitmap flags</field>
-      <field type="uint8_t" name="uplink_quality">Uplink quality scaled in factor 0 to 255</field>
-      <field type="uint16_t" name="servo_vcc" units="mV">Servo rail voltage.</field>
-      <field type="int16_t" name="support_board_temp" units="cdegC">Vehicle support board temperature</field>
     </message>
     <!-- ardupilot specific mavlink2 messages starting at 11000-->
     <message id="11000" name="DEVICE_OP_READ">
