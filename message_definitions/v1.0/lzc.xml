@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mavlink>
-<include>ardupilotmega.xml</include>
 <!-- Landing Zones Canada, Inc: -->
 <!-- mavlink ID range: 20000 - 20099 -->
 <!-- Command range:    20000 - 20049 -->
