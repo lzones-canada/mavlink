@@ -2,9 +2,9 @@
 <mavlink>
 <include>ardupilotmega.xml</include>
 <!-- Landing Zones Canada, Inc: -->
-<!-- mavlink ID range: 70000 - 70099 -->
-<!-- Command range: 70000 - 70049 -->
-<!-- Status  range: 70050 - 70099 -->
+<!-- mavlink ID range: 20000 - 20099 -->
+<!-- Command range:    20000 - 20049 -->
+<!-- Status  range:    20050 - 20099 -->
 
 <!--================================================================================================-->
 <!-- Enums -->
@@ -12,9 +12,9 @@
   <enums>
     <enum name="MAV_CMD">
       <!--================================================================================================-->
-      <!--LZC specific MAV_CMD_* commands (70000 - 70049) -->
+      <!--LZC specific MAV_CMD_* commands (20000 - 20049) -->
       <!--================================================================================================-->
-      <entry name="MAV_CMD_PAYLOAD_CTRL" value="70000">
+      <entry name="MAV_CMD_PAYLOAD_CTRL" value="20000">
         <description>Vehicle specific payload control</description>
         <param index="1">Beacon Lights</param>
         <param index="2">Empty</param>
@@ -59,18 +59,18 @@
 
 
 <!--================================================================================================-->
-<!--Status Messages (70050 - 70099) -->
+<!--Status Messages (20050 - 20099) -->
 <!--================================================================================================-->
 <messages>
     <!-- IMET Mavlink Message -->
-    <message id="70050" name="IMET_SENSOR_RAW">
+    <message id="20050" name="IMET_SENSOR_RAW">
       <description>Contains raw sensor data from IMET application.</description>
       <field type="uint32_t" name="time_boot_ms">Timestamp (milliseconds since system boot)</field>  
       <field type="uint8_t" name="data_length">Data length.</field>
       <field type="uint8_t[64]" name="data">IMET sensor raw data message</field>
     </message>
     <!-- Payload Status Message -->
-    <message id="70051" name="PAYLOAD_STATUS">
+    <message id="20051" name="PAYLOAD_STATUS">
       <description>Contains Payload status information.</description>
       <field type="uint8_t" name="flags" enum="PAYLOAD_STATUS_FLAGS" display="bitmask">Payload status bitmap flags</field>
       <field type="uint8_t" name="uplink_quality">Uplink quality scaled in factor 0 to 255</field>

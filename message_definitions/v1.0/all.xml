@@ -40,8 +40,8 @@
   -->
   <include>lzc.xml</include>
   <!-- lzc.xml range of IDs:
-    messages: 70000 - 70099
-    commands: 70000 - 70049
+    messages: 20000 - 20099
+    commands: 20000 - 20049
   -->
   <include>cubepilot.xml</include>
   <messages/>
