@@ -32,7 +32,7 @@
         <entry value="32" name="PAYLOAD_CONTROL_SWEEP_WING_CALIBRATE">
           <description>Valid value in command when bit set ON</description>
         </entry>
-        <entry value="64" name="PAYLOAD_CONTROL_SET_HSTM">
+        <entry value="64" name="PAYLOAD_CONTROL_SET_MODEM_BOOST">
           <description>Valid value in command when bit set ON</description>
         </entry>
         <entry value="128" name="PAYLOAD_CONTROL_SET_BEACON_LIGHTS">
@@ -81,7 +81,7 @@
       <description>Control payload devices.</description>
       <field type="uint8_t" name="flags" enum="PAYLOAD_CONTROL_FLAGS" display="bitmask">Payload control bitmap flags</field>
       <field type="uint8_t" name="beacon_lights">Beacon lights payload</field>
-      <field type="uint8_t" name="hstm">HSTM payload</field>
+      <field type="uint8_t" name="modem_boost">Boost vehicle modem payload</field>
       <field type="uint8_t" name="sweep_wing_calibrate">Sweep wing calibration flag</field>
       <field type="uint8_t" name="sweep_wing_percentage">Seep wing percentage value</field>
     </message>
