@@ -26,7 +26,7 @@
         <entry value="8" name="PAYLOAD_CONTROL_FLAGS_RESERVED4">
           <description>Reserved - Future use.</description>
         </entry>
-        <entry value="16" name="PAYLOAD_CONTROL_SWEEP_WING_PERCENTAGE">
+        <entry value="16" name="PAYLOAD_CONTROL_SWEEP_WING_VALUE">
           <description>Valid value in command when bit set ON</description>
         </entry>
         <entry value="32" name="PAYLOAD_CONTROL_SWEEP_WING_CALIBRATE">
@@ -83,7 +83,7 @@
       <field type="uint8_t" name="beacon_lights">Beacon lights payload</field>
       <field type="uint8_t" name="modem_boost">Boost vehicle modem payload</field>
       <field type="uint8_t" name="sweep_wing_calibrate">Sweep wing calibration flag</field>
-      <field type="uint8_t" name="sweep_wing_percentage">Seep wing percentage value</field>
+      <field type="uint8_t" name="sweep_wing_value">Seep wing value</field>
     </message>
 
 <!--================================================================================================-->
