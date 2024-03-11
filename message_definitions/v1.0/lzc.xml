@@ -26,17 +26,45 @@
         <entry value="8" name="PAYLOAD_CONTROL_FLAGS_RESERVED4">
           <description>Reserved - Future use.</description>
         </entry>
-        <entry value="16" name="PAYLOAD_CONTROL_SWEEP_WING_VALUE">
+        <entry value="16" name="PAYLOAD_CONTROL_FLAGS_RESERVED5">
+          <description>Reserved - Future use.</description>
+        </entry>
+        <entry value="32" name="PAYLOAD_CONTROL_SWEEP_WING_VALUE">
           <description>Valid value in command when bit set ON</description>
         </entry>
-        <entry value="32" name="PAYLOAD_CONTROL_SWEEP_WING_CALIBRATE">
-          <description>Valid value in command when bit set ON</description>
-        </entry>
-        <entry value="64" name="PAYLOAD_CONTROL_SET_MODEM_BOOST">
+        <entry value="64" name="PAYLOAD_CONTROL_SWEEP_WING_CALIBRATE">
           <description>Valid value in command when bit set ON</description>
         </entry>
         <entry value="128" name="PAYLOAD_CONTROL_SET_BEACON_LIGHTS">
           <description>Valid value in command when bit set ON</description>
+        </entry>
+      </enum>
+
+      <enum name="STATION_CONTROL_FLAGS" bitmask="true">
+        <description>These encode the station control flags and sent as part of the MAV_CMD_STATION_CTRL message.</description>
+        <entry value="1" name="STATION_CONTROL_FLAGS_RESERVED1">
+          <description>Reserved - Future use.</description>
+        </entry>
+        <entry value="2" name="STATION_CONTROL_FLAGS_RESERVED2">
+          <description>Reserved - Future use.</description>
+        </entry>
+        <entry value="4" name="STATION_CONTROL_FLAGS_RESERVED3">
+          <description>Reserved - Future use.</description>
+        </entry>
+        <entry value="8" name="STATION_CONTROL_FLAGS_RESERVED4">
+          <description>Reserved - Future use.</description>
+        </entry>
+        <entry value="16" name="STATION_CONTROL_FLAGS_RESERVED5">
+          <description>Reserved - Future use.</description>
+        </entry>
+        <entry value="32" name="STATION_CONTROL_FLAGS_MODEM_BOOST">
+          <description>Reserved - Future use.</description>
+        </entry>
+        <entry value="64" name="STATION_CONTROL_FLAGS_TX_STBD">
+          <description>Transmit data out Stbd Modem</description>
+        </entry>
+        <entry value="128" name="STATION_CONTROL_FLAGS_TX_PORT">
+          <description>Transmit data out Port Modem</description>
         </entry>
       </enum>
     <!--================================================================================================-->
@@ -44,10 +72,10 @@
     <!--================================================================================================-->
     <enum name="PAYLOAD_STATUS_FLAGS" bitmask="true">
       <description>These encode the payload status and sent as part of the PAYLOAD_STATUS message.</description>
-      <entry value="1" name="PAYLOAD_STATUS_FLAGS_RESERVED4">
+      <entry value="1" name="PAYLOAD_STATUS_FLAGS_RESERVED2">
         <description>Reserved - Future use.</description>
       </entry>
-      <entry value="2" name="PAYLOAD_STATUS_FLAGS_RESERVED3">
+      <entry value="2" name="PAYLOAD_STATUS_FLAGS_RESERVED1">
         <description>Reserved - Future use.</description>
       </entry>
       <entry value="4" name="PAYLOAD_STATUS_FLAGS_SWEEP_WING_LIMIT">
@@ -69,6 +97,34 @@
         <description>Parachute Deploy status (Pin 103) - on when set.</description>
       </entry>
     </enum>
+
+    <enum name="STATION_STATUS_FLAGS" bitmask="true">
+      <description>These encode the station status and sent as part of the STATION_STATUS message.</description>
+      <entry value="1" name="STATION_STATUS_FLAGS_RESERVED1">
+        <description>Reserved - Future use.</description>
+      </entry>
+      <entry value="2" name="STATION_STATUS_FLAGS_RESERVED2">
+        <description>Reserved - Future use.</description>
+      </entry>
+      <entry value="4" name="STATION_STATUS_FLAGS_RESERVED3">
+        <description>Reserved - Future use.</description>
+      </entry>
+      <entry value="8" name="STATION_STATUS_FLAGS_RESERVED4">
+        <description>Reserved - Future use.</description>
+      </entry>
+      <entry value="16" name="STATION_STATUS_FLAGS_RESERVED5">
+        <description>Reserved - Future use.</description>
+      </entry>
+      <entry value="32" name="STATION_STATUS_FLAGS_MODEM_BOOST">
+        <description>Modem boost status - on when set.</description>
+      </entry>
+      <entry value="64" name="STATION_STATUS_FLAGS_TX_STBD">
+        <description>Tx Stbd modem status - on when set.</description>
+      </entry>
+      <entry value="128" name="STATION_STATUS_FLAGS_TX_PORT">
+        <description>Tx Port modem status - on when set.</description>
+      </entry>
+    </enum>
   </enums>
 
 
@@ -81,9 +137,14 @@
       <description>Control payload devices.</description>
       <field type="uint8_t" name="flags" enum="PAYLOAD_CONTROL_FLAGS" display="bitmask">Payload control bitmap flags</field>
       <field type="uint8_t" name="beacon_lights">Beacon lights payload</field>
-      <field type="uint8_t" name="modem_boost">Boost vehicle modem payload</field>
       <field type="uint8_t" name="sweep_wing_calibrate">Sweep wing calibration flag</field>
       <field type="uint8_t" name="sweep_wing_value">Seep wing value</field>
+    </message>
+
+    <!-- Station Control Message -->
+    <message id="20001" name="STATION_CTRL">
+      <description>Control station connected devices.</description>
+      <field type="uint8_t" name="flags" enum="STATION_CONTROL_FLAGS" display="bitmask">Station control bitmap flags</field>
     </message>
 
 <!--================================================================================================-->
@@ -105,6 +166,11 @@
       <field type="uint16_t" name="servo_vcc" units="mV">Servo rail voltage.</field>
       <field type="int16_t" name="support_board_temp" units="cdegC">Vehicle support board temperature</field>
       <field type="uint16_t" name="sweep_wing" units="cdeg">Sweep Wing Angle in Degrees.</field>
+    </message>
+    <!-- Station Status Message -->
+    <message id="20052" name="STATION_STATUS">
+      <description>Contains Station status information.</description>
+      <field type="uint8_t" name="flags" enum="STATION_STATUS_FLAGS" display="bitmask">Station status bitmap flags</field>
     </message>
   </messages>
 </mavlink>
