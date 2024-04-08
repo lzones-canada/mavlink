@@ -5,6 +5,7 @@
   <include>uAvionix.xml</include>
   <include>icarous.xml</include>
   <include>loweheiser.xml</include>
+  <include>lzc.xml</include>
   <include>cubepilot.xml</include>
   <include>csAirLink.xml</include>
   <dialect>2</dialect>
