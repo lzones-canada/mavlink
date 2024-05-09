@@ -75,8 +75,8 @@
       <entry value="1" name="PAYLOAD_STATUS_FLAGS_RESERVED2">
         <description>Reserved - Future use.</description>
       </entry>
-      <entry value="2" name="PAYLOAD_STATUS_FLAGS_RESERVED1">
-        <description>Reserved - Future use.</description>
+      <entry value="2" name="PAYLOAD_STATUS_FLAGS_WATCHDOG_STATUS">
+        <description>Watchdog Status - Ready when set.</description>
       </entry>
       <entry value="4" name="PAYLOAD_STATUS_FLAGS_SWEEP_WING_LIMIT">
         <description>Sweep Wing Limit Status (Pin 54) - on when set.</description>
