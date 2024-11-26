@@ -166,6 +166,7 @@
       <field type="uint16_t" name="servo_vcc" units="mV">Servo rail voltage.</field>
       <field type="int16_t" name="support_board_temp" units="cdegC">Vehicle support board temperature</field>
       <field type="uint16_t" name="sweep_wing" units="cdeg">Sweep Wing Angle in Degrees.</field>
+      <extensions/>
       <field type="uint16_t" name="sweep_wing_vcc" units="mV">Sweep Swing Servo input Voltage (DA15-N)</field>
       <field type="int16_t" name="sweep_wing_temp" units="cdegC">Volz Wing servo board temperature</field>
       <field type="uint16_t" name="sweep_wing_current" units="mA">Sweep Wing Servo Current (DA15-N)</field>
