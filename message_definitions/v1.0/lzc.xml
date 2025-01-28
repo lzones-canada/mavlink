@@ -170,6 +170,7 @@
       <field type="uint16_t" name="sweep_wing_vcc" units="mV">Sweep Swing Servo input Voltage (DA15-N)</field>
       <field type="int16_t" name="sweep_wing_temp" units="cdegC">Volz Wing servo board temperature</field>
       <field type="uint16_t" name="sweep_wing_current" units="mA">Sweep Wing Servo Current (DA15-N)</field>
+      <field type="int16_t" name="hab_cutter_temp" units="cdegC">Volz Wing servo board temperature</field>
     </message>
     <!-- Station Status Message -->
     <message id="20052" name="STATION_STATUS">
