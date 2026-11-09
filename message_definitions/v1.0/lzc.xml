@@ -174,8 +174,21 @@
     </message>
     <!-- Station Status Message -->
     <message id="20052" name="STATION_STATUS">
-      <description>Contains Station status information.</description>
+      <description>Contains Station status information. The modem fields are read back from each GCS modem over its diagnostics channel. Modem firmware version "v1.50 build 1.3870" is sent as fw_major=1, fw_minor=50, fw_build_major=1, fw_build_minor=3870 and is rebuilt as "v%u.%02u build %u.%u"; all zero when unknown.</description>
       <field type="uint8_t" name="flags" enum="STATION_STATUS_FLAGS" display="bitmask">Station status bitmap flags</field>
+      <extensions/>
+      <field type="uint8_t" name="port_power" units="dBm">Port modem output power read back, 0 when unknown.</field>
+      <field type="int8_t" name="port_temp" units="degC">Port modem temperature, INT8_MAX (127) when unknown.</field>
+      <field type="uint8_t" name="port_fw_major">Port modem firmware major version (1 in "v1.50 build 1.3870"), 0 when unknown.</field>
+      <field type="uint8_t" name="port_fw_minor">Port modem firmware minor version (50 in "v1.50 build 1.3870"), 0 when unknown.</field>
+      <field type="uint8_t" name="port_fw_build_major">Port modem firmware build major (1 in "v1.50 build 1.3870"), 0 when unknown.</field>
+      <field type="uint16_t" name="port_fw_build_minor">Port modem firmware build minor (3870 in "v1.50 build 1.3870"), 0 when unknown.</field>
+      <field type="uint8_t" name="stbd_power" units="dBm">Stbd modem output power read back, 0 when unknown.</field>
+      <field type="int8_t" name="stbd_temp" units="degC">Stbd modem temperature, INT8_MAX (127) when unknown.</field>
+      <field type="uint8_t" name="stbd_fw_major">Stbd modem firmware major version, 0 when unknown.</field>
+      <field type="uint8_t" name="stbd_fw_minor">Stbd modem firmware minor version, 0 when unknown.</field>
+      <field type="uint8_t" name="stbd_fw_build_major">Stbd modem firmware build major, 0 when unknown.</field>
+      <field type="uint16_t" name="stbd_fw_build_minor">Stbd modem firmware build minor, 0 when unknown.</field>
     </message>
   </messages>
 </mavlink>
